@@ -1,0 +1,13 @@
+.row {
+	display:block;
+	height: 125px;
+}
+
+.cell {
+	width: 125px;
+	height: 125px;
+	margin: 0 0;
+	display: inline-block;
+	background-color: #111;
+	opacity: 0.1;
+}
