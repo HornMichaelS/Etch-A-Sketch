@@ -13,8 +13,6 @@ $(document).ready(function() {
 	// Create the grid within the container div
 	constructGrid();
 
-	console.log($container);
-
 	$(document).on('mouseenter', '.cell', function() {
 		// Determine which action to take, depending on current draw mode
 		switch(mode) {
