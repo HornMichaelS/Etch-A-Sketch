@@ -1,3 +1,25 @@
+#container {
+	margin: 0 auto;
+}
+
+#buttonContainer {
+	text-align: center;
+}
+
+button {
+	margin: 10px auto;
+	padding: 5px 10px;
+	border: 2px solid white;
+	font-size: 10pt;
+	background-color: #5050FF;
+	font-weight: bold;
+	color: white;
+}
+
+*:focus {
+	outline: none;
+}
+
 .row {
 	display:block;
 }

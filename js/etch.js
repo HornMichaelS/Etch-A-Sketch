@@ -1,17 +1,36 @@
+var numRows = 50;
+const CONTAINER_SIZE = 500;
+
 $(document).ready(function() {
-
 	var $container = $('<div id="container"></div>');
+	$container.css('width', CONTAINER_SIZE.toString());
+	$container.css('height', CONTAINER_SIZE.toString());
+	$('body').append($container);
+
+	constructGrid();
+
+	console.log($container);
+
+	$('body').append($container);
+
+	$(document).on('mouseenter', '.cell', function() {
+		$(this).css('opacity', '1');
+	});
+});
+
+function clearGrid() {
+	$('.cell').css('opacity', '0.1');
+	numRows = prompt("Enter new grid size");
+
+	constructGrid();
+}
+
+function constructGrid() {
+	$('#container').empty();
 	var $cell = $('<div class="cell"></div>');
-	var $firstCell = $cell.clone().addClass('firstCell');
-	var $row = $('<div class="row"></div>')
+	var $row = $('<div class="row"></div>');
 
-	var containerSize = 400;
-	var numRows = 32;
-
-	var cellSize = containerSize / numRows;
-
-	$container.css('width', containerSize.toString());
-	$container.css('height', containerSize.toString());
+	var cellSize = CONTAINER_SIZE / numRows;
 
 	$cell.css('width', cellSize.toString());
 	$cell.css('height', cellSize.toString());
@@ -21,15 +40,7 @@ $(document).ready(function() {
 		$currentRow = $row.clone();
 		for (j = 0; j < numRows; j++) {
 			$currentRow.append($cell.clone());
-			$container.append($currentRow);
+			$('#container').append($currentRow);
 		}
 	}
-
-	console.log($container);
-
-	$('body').append($container);
-
-	$(document).on('mouseenter', '.cell', function() {
-		$(this).fadeTo('fast', 1);
-	});
-});
+}
