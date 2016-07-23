@@ -8,14 +8,12 @@ $(document).ready(function() {
 	var $container = $('<div id="container"></div>');
 	$container.css('width', CONTAINER_SIZE.toString());
 	$container.css('height', CONTAINER_SIZE.toString());
-	$('body').append($container);
+	$('#buttonContainer').before($container);
 
 	// Create the grid within the container div
 	constructGrid();
 
 	console.log($container);
-
-	$('body').append($container);
 
 	$(document).on('mouseenter', '.cell', function() {
 		// Determine which action to take, depending on current draw mode

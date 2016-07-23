@@ -1,6 +1,8 @@
 #container {
-	margin: 0 auto;
-	border: 3px solid #555;
+	margin: 20px auto;
+	border: 10px solid #F95;
+	border-radius: 10px;
+	background-color: #FFF;
 }
 
 #buttonContainer {
@@ -8,8 +10,8 @@
 }
 
 button {
-	margin: 10px auto;
-	padding: 10px 16px;
+	margin: 0 auto;
+	padding: 10px 19px;
 	border: 2px solid white;
 	font-size: 10pt;
 	background-color: #5050FF;
@@ -23,21 +25,25 @@ button:hover {
 
 .selected:hover {
 	background-color: #3030FF;
-	border: 2px solid black;
+	border: 2px solid #BBB;
 }
 
 button.selectable:active {
 	background-color: #3030FF;
-	border: 2px solid black;
+	border: 2px solid #BBB;
 }
 
 .selected {
 	background-color: #3030FF;
-	border: 2px solid black;
+	border: 2px solid #BBB;
 }
 
 *:focus {
 	outline: none;
+}
+
+body {
+	background-color: #444;
 }
 
 .row {
