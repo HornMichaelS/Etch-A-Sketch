@@ -1,7 +1,12 @@
 #container {
 	margin: 20px auto;
-	border: 5px solid #F65;
+	border-top: 5px solid #F65;
+	border-left: 5px solid #F65;
+	border-bottom: 5px solid #D43;
+	border-right: 5px solid #D43;
+	border-radius: 3px;
 	background-color: #FFF;
+	box-shadow: 5px 5px 2px black;
 }
 
 #buttonContainer {
