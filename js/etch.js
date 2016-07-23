@@ -1,4 +1,5 @@
 var numRows = 4;
+var mode = 'normal';
 const CONTAINER_SIZE = 500;
 
 $(document).ready(function() {
@@ -14,21 +15,22 @@ $(document).ready(function() {
 	$('body').append($container);
 
 	$(document).on('mouseenter', '.cell', function() {
-		var currentOpacity = parseFloat($(this).css('opacity'));
-		var newOpacity = 1;
-		if (currentOpacity < 1) {
-			newOpacity = currentOpacity + 0.1;
+		switch(mode) {
+			case 'normal':
+				blacken($(this));
+				break;
+			case 'shade':
+				darken($(this));
+				break;
+			case 'color':
+				color($(this));
 		}
-
-		$(this).css('opacity', newOpacity.toString());
 	});
 });
 
 function clearGrid() {
 	$('.cell').css('opacity', '0.1');
-	numRows = prompt("Enter new grid size");
-
-	constructGrid();
+	$('.cell').css('background-color', '#111');
 }
 
 function constructGrid() {
@@ -49,4 +51,39 @@ function constructGrid() {
 			$('#container').append($currentRow);
 		}
 	}
+}
+
+function darken($cell) {
+	var currentOpacity = parseFloat($cell.css('opacity'));
+	var newOpacity = 1;
+	if (currentOpacity < 1) {
+		newOpacity = currentOpacity + 0.1;
+	}
+
+	$cell.css('opacity', newOpacity.toString());
+}
+
+function blacken($cell) {
+	$cell.css('opacity', '1');
+}
+
+function color($cell) {
+	var red = Math.floor((Math.random() * 256)).toString();
+	var green = Math.floor((Math.random() * 256)).toString();
+	var blue = Math.floor((Math.random() * 256)).toString();
+
+	var color = "rgb("+red+","+green+","+blue+")"
+
+	$cell.css('background-color', color);
+	blacken($cell);
+}
+
+function changeMode(newMode) {
+	clearGrid();
+	mode = newMode;
+}
+
+function resizeGrid() {
+	numRows = prompt("Enter new grid size");
+	constructGrid();
 }

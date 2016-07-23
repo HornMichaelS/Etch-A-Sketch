@@ -1,5 +1,6 @@
 #container {
 	margin: 0 auto;
+	border: 3px solid #555;
 }
 
 #buttonContainer {
@@ -25,7 +26,7 @@ button {
 }
 
 .cell {
-	display: inline-block;
+	float: left;
 	background-color: #111;
 	opacity: 0.1;
 }
