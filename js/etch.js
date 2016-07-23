@@ -1,4 +1,4 @@
-var numRows = 50;
+var numRows = 4;
 const CONTAINER_SIZE = 500;
 
 $(document).ready(function() {
@@ -14,7 +14,13 @@ $(document).ready(function() {
 	$('body').append($container);
 
 	$(document).on('mouseenter', '.cell', function() {
-		$(this).css('opacity', '1');
+		var currentOpacity = parseFloat($(this).css('opacity'));
+		var newOpacity = 1;
+		if (currentOpacity < 1) {
+			newOpacity = currentOpacity + 0.1;
+		}
+
+		$(this).css('opacity', newOpacity.toString());
 	});
 });
 
