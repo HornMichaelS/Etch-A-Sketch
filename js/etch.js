@@ -1,4 +1,4 @@
-var numRows = 4;
+var numRows = 16;
 var mode = 'normal';
 const CONTAINER_SIZE = 500;
 
@@ -96,7 +96,7 @@ function color($cell) {
 	var blue = Math.floor((Math.random() * 256)).toString();
 
 	// Create value string for color property
-	var color = "rgb("+red+","+green+","+blue+")"
+	var color = "rgb("+red+","+green+","+blue+")";
 
 	$cell.css('background-color', color);
 	// Set cell opacity to 100%
