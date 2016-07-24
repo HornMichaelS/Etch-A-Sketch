@@ -21,6 +21,7 @@ $(document).ready(function() {
 				break;
 			case 'shade':
 				darken($(this));
+				raise($(this));
 				break;
 			case 'color':
 				color($(this));
@@ -44,6 +45,7 @@ $(document).ready(function() {
 function clearGrid() {
 	// Reset css properties for all cells to default
 	$('.cell').css('opacity', '0.1');
+	$('.cell').css('box-shadow', '0px 0px 0px black');
 	$('.cell').css('background-color', '#111');
 }
 
@@ -120,5 +122,17 @@ function resizeGrid() {
 	if (numRows != null) {
 		numRows = parseInt(numRows);
 		constructGrid();
+	}
+}
+
+function raise($cell) {
+	var shadowValues = $cell.css('box-shadow').split(" ");
+	var shadowSize = parseInt(shadowValues[3]);
+	if (shadowSize < (CONTAINER_SIZE / numRows)*0.075 && shadowSize < 7) {
+		shadowSize++;
+		var value = shadowSize+"px "+shadowSize+"px ";
+		value += "1px "+"black";
+
+		$cell.css("box-shadow", value);
 	}
 }
