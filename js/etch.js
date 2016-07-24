@@ -128,7 +128,7 @@ function resizeGrid() {
 function raise($cell) {
 	var shadowValues = $cell.css('box-shadow').split(" ");
 	var shadowSize = parseInt(shadowValues[3]);
-	if (shadowSize < (CONTAINER_SIZE / numRows)*0.075 && shadowSize < 7) {
+	if (shadowSize < (CONTAINER_SIZE / numRows)*0.05 && shadowSize < 2) {
 		shadowSize++;
 		var value = shadowSize+"px "+shadowSize+"px ";
 		value += "1px "+"black";
