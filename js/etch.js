@@ -118,9 +118,10 @@ function changeMode(newMode) {
 // A function which changes the number of cells within the container div.
 function resizeGrid() {
 	numRows = prompt("Enter new grid size");
-	numRows = parseInt(numRows);
+	temp = parseInt(numRows);
 	// Only construct new grid if user inputs number
-	if (!isNaN(numRows)) {
+	if (!isNaN(temp)) {
+		numRows = temp;
 		constructGrid();
 	}
 }
