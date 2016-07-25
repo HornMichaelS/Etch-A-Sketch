@@ -46,8 +46,8 @@ function clearGrid() {
 	// Reset css properties for all cells to default
 	$('.cell').removeClass('tile');
 	$('.cell').css('box-shadow', '');
-	$('.cell').css('opacity', '0.1');
-	$('.cell').css('background-color', '#111');
+	$('.cell').css('opacity', '');
+	$('.cell').css('background-color', '');
 }
 
 // Create a square grid of divs having class 'cell', numRows x numRows.
@@ -118,10 +118,9 @@ function changeMode(newMode) {
 // A function which changes the number of cells within the container div.
 function resizeGrid() {
 	numRows = prompt("Enter new grid size");
-
+	numRows = parseInt(numRows);
 	// Only construct new grid if user inputs number
-	if (numRows != null) {
-		numRows = parseInt(numRows);
+	if (!isNaN(numRows)) {
 		constructGrid();
 	}
 }
