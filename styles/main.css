@@ -1,0 +1,64 @@
+html, body {
+  height: 100vh;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.top-buttons-container, .bottom-buttons-container {
+  padding: 10px;
+  width: 640px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  transition: all 0.3s;
+  height: 50px;
+  background-color: #3AF;
+  border: none;
+  font-size: 20px;
+  color: white;
+  box-shadow: 0px 3px 4px rgb(0, 0, 0, 0.35);
+  outline: none;
+  width: 200px;
+}
+
+button:hover {
+  background-color: rgb(48, 163, 245);
+  box-shadow: 0px 4px 5px rgb(0, 0, 0, 0.35);
+}
+
+button:active {
+  transition: all 0.1s;
+  background-color: rgb(46, 157, 236);
+  box-shadow: 0px 5px 7px rgb(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#shakeButton {
+  width: 100%;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.grid-cell {
+  background: #eee;
+  display: inline-block;
+  margin: 0;
+  line-height: 0;
+}
+
+.grid-cell.hovered {
+  background-color: black;
+}
